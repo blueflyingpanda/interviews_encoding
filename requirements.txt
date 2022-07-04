@@ -1,0 +1,6 @@
+numpy
+sklearn
+docx2txt
+pandas
+openpyxl
+sentence-transformers
