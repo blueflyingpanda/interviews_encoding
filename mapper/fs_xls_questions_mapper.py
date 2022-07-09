@@ -2,7 +2,6 @@ from mapper.questions_mapper import QuestionsMapper
 from pathlib import Path
 from typing import Dict
 import pandas as pd
-import numpy as np
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 

@@ -18,7 +18,7 @@ class DocumentExtensions(Extensions):
     BOTH = Extensions.BOTH.format(BASE_EXTENSION)
 
     
-class SheetExtensions(Extensions):
+class SpreadsheetExtensions(Extensions):
     """helper class that works as enum for extensions in FsXlsTableDumper"""
 
     BASE_EXTENSION = 'xls'
