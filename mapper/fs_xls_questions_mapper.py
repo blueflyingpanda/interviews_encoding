@@ -20,7 +20,7 @@ class FsXlsQuestionsMapper(QuestionsMapper):
         self.table_path = Path(table_path)
         self._questions = None
         self._embeddings = None
-        self.model = SentenceTransformer('bert_sentence_ru_cased_L-12_H-768_A-12_pt')
+        self.model = SentenceTransformer('sentence-transformers/LaBSE')
 
     @property
     def questions(self):
@@ -44,8 +44,14 @@ class FsXlsQuestionsMapper(QuestionsMapper):
             cosim = cosine_similarity(
                     self.embeddings,
                     self.model.encode(self._remove_dialog_pattern(q)).reshape(1, -1))
-            max_index = np.argmax(cosim)
-            qa[self.questions[max_index]] = self._remove_dialog_pattern(question_to_answer[q])
+            cosim = list(cosim)
+            max_index = cosim.index(max(cosim))
+            while self.questions[max_index] in qa and len(cosim):
+                cosim.pop(max_index)
+                if len(cosim):
+                    max_index = cosim.index(max(cosim))
+            if len(cosim):
+                qa[self.questions[max_index]] = self._remove_dialog_pattern(question_to_answer[q])
         return qa
 
     @staticmethod
