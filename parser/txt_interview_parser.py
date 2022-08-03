@@ -14,7 +14,8 @@ class TxtInterviewParser(InterviewParser):
         parsed_interview = ParsedInterview(
             code=raw_interview.code,
             content=None,  # content will be parsed and no longer required
-            question_to_answer={}
+            question_to_answer={},
+            code_to_answer={}
         )
         start_index = self._get_interview_start_index(raw_interview.content)
         # ' ' - weird values that appear when converting doc to txt
