@@ -11,6 +11,9 @@ class RawInterview:
 @dataclass
 class ParsedInterview(RawInterview):
     question_to_answer: Dict[str, str]
+    qa_block1: Dict[str, str]
+    qa_block2: Dict[str, str]
+    qa_block3: Dict[str, str]
     code_to_answer: Dict[str, str]
     duration: str = ''
     date: str = ''

@@ -14,7 +14,18 @@ class InterviewParser(ABC):
         'respondent_expertise': 'Должность',
         'duration': 'Длительность интервью по файлу записи'
     }
-
+    B1B2_SEPARATOR = 'индустри'
+    B2B3_SEPARATORS = (
+        "Трудности".lower(),
+        "Проблемы".lower(),
+        "Сложности".lower(),
+        "Тяжело".lower(),
+        "Трудно".lower(),
+        "Нелегко".lower(),
+        "Препятствие".lower(),
+        "Нехватка".lower(),
+        "Отсутствие".lower()
+    )
     @abstractmethod
     def parse(self, interview: RawInterview) -> ParsedInterview:
         raise NotImplementedError

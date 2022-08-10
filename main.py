@@ -16,7 +16,9 @@ if __name__ == '__main__':
 
     questions_mapper = FsXlsQuestionsMapper('interview_code_template.xlsx')
     for _interview in interviews:
-        _interview.code_to_answer = questions_mapper.match_questions(_interview.question_to_answer)
+        _interview.code_to_answer = questions_mapper.match_questions(_interview.qa_block1, block=1)
+        _interview.code_to_answer.update(questions_mapper.match_questions(_interview.qa_block2, block=2))
+        _interview.code_to_answer.update(questions_mapper.match_questions(_interview.qa_block3, block=3))
 
     interviews_dumper = FsXlsInterviewsDumper(table_path='interview_code.xlsx',
                                               template_path='interview_code_template.xlsx')
