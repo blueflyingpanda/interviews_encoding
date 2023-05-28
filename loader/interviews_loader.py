@@ -3,7 +3,7 @@ from typing import Iterable
 from interview import RawInterview
 
 
-class InterviewsLoader(ABC):
+class BaseInterviewsLoader(ABC):
 
     @abstractmethod
     def load(self) -> Iterable[RawInterview]:

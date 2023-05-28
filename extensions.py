@@ -9,7 +9,7 @@ class Extensions(ABC):
 
 
 class DocumentExtensions(Extensions):
-    """helper class that works as enum for extensions in FsDocInterviewsLoader"""
+    """helper class that works as enum for extensions in FsDocBaseInterviewsLoader"""
 
     BASE_EXTENSION = 'doc'
 

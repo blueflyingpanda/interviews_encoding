@@ -1,6 +1,7 @@
-numpy
-sklearn
 docx2txt
 pandas
 openpyxl
-sentence-transformers
+multi-rake
+nltk
+pymystem3
+dostoevsky

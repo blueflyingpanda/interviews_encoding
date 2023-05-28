@@ -3,7 +3,7 @@ from interview import ParsedInterview
 from typing import List
 
 
-class InterviewsDumper(ABC):
+class BaseInterviewsDumper(ABC):
 
     @abstractmethod
     def dump(self, interviews: List[ParsedInterview]) -> None:
