@@ -11,7 +11,7 @@ nltk.download('punkt')
 
 class KeywordsExtractor:
 
-    stopwords = set(stop_words.words('russian'))
+    stopwords = set(stop_words.words('russian') + ['это', 'очень', 'почему', 'поэтому', 'никто'])
 
     algo = Rake(
         min_chars=3,

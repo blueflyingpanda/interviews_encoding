@@ -20,7 +20,7 @@ class FsXlsTableFormatter(BaseTableFormatter):
                         features_result = json.loads(values[1])
                         cell.fill = cls.calculate_color(features_result.get('sa', 0))
 
-        columns = [col for col in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'] + ['AA', 'AB', 'AC', 'AD', 'AE', 'AF', 'AG']
+        columns = [col for col in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'] + ['AA', 'AB', 'AC', 'AD', 'AE', 'AF', 'AG', 'AH']
         for column in columns:
             worksheet.column_dimensions[column].width = cls.width
 
