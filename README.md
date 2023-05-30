@@ -27,7 +27,15 @@ Start a program
 
 Program will analyze interviews in **interviews** directory 
 
-and encodes them in **interview_code.xlsx** using **interview_code_template.xlsx** as base template.
+and encodes them in **interview_code.xlsx** using **interview_code_template.xlsx** as base template
+where first 7 columns are meta information and all other columns are questions with codes.
+
+Every row apart from header represents a single interview. Every cell represents answer to the questions block.
+
+In some cells you may find list of keywords from the answers. 
+
+If cell's background is coloured red it means that author attitude is more likely negative,
+else if it is green it is more likely positive. If it is white attitude is either neutral or uncertain.
 
 ## Interview Formatting
 
